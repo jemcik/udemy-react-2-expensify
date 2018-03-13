@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "ajv": "^6.2.1",
+    "express": "^4.16.3",
     "moment": "^2.21.0",
     "normalize.css": "^8.0.0",
     "react": "^16.2.0",

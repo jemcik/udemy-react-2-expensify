@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 import Header from '../../components/Header';
 
 test('header render', () => {
-	const wrapper = shallow(<Header />);
+    const wrapper = shallow(<Header />);
 
-	expect(wrapper).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
 });

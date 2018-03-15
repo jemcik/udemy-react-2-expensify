@@ -2,7 +2,6 @@
 
 exports[`header expense list 1`] = `
 <div>
-  <Connect(ExpenseListFilter) />
   <ExpenseListItem
     amount={195}
     createdAt={0}

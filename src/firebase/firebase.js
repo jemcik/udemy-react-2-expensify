@@ -1,12 +1,12 @@
 import * as firebase from 'firebase';
 
 const config = {
-    apiKey: "AIzaSyAFOgHBctEPRXjuNgrVIf6x6PPRlCknKBc",
-    authDomain: "jemcik-udemy-react-2-expensify.firebaseapp.com",
-    databaseURL: "https://jemcik-udemy-react-2-expensify.firebaseio.com",
-    projectId: "jemcik-udemy-react-2-expensify",
-    storageBucket: "jemcik-udemy-react-2-expensify.appspot.com",
-    messagingSenderId: "474287920341"
+    apiKey: process.env.REACT_APP_API_KEY,
+    authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+    databaseURL: process.env.REACT_APP_DATABASE_URL,
+    projectId: process.env.REACT_APP_PROJECT_ID,
+    storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+    messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID
 };
 
 firebase.initializeApp(config);

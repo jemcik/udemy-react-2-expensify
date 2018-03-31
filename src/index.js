@@ -1,14 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
+import { firebase } from './firebase/firebase';
+import moment from 'moment';
+import 'moment/locale/ru';
+import numeral from 'numeral';
+import 'numeral/locales/uk-ua';
 import AppRouter, { history } from './routers/AppRouter';
 import configureStore from './store/configureStore';
 import { login, logout } from './actions/auth';
 import { startSetExpenses } from './actions/expenses';
 import 'normalize.css/normalize.css';
 import './styles/index.css';
+import 'react-dates/initialize';
 import 'react-dates/lib/css/_datepicker.css';
-import { firebase } from './firebase/firebase';
+import LoadingPage from './components/LoadingPage';
+
+numeral.locale('uk-ua');
+moment.locale('ru');
 
 const store = configureStore();
 
@@ -26,7 +35,7 @@ const renderApp = () => {
     }
 };
 
-ReactDOM.render(<p>Loading...</p>, document.getElementById('root'));
+ReactDOM.render(<LoadingPage />, document.getElementById('root'));
 
 firebase.auth().onAuthStateChanged((user) => {
     if (user) {

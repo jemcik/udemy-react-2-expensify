@@ -1,22 +1,76 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`render ExpensesSummary for 1 expense 1`] = `
-<div>
-  Viewing 
-  1
-   expense
-   totalling 
-  $1.95
+<div
+  className="page-header"
+>
+  <div
+    className="content-container"
+  >
+    <h1
+      className="title"
+    >
+      Показан
+      <span>
+         
+        1
+      </span>
+       
+      расход
+      , общая сумма: 
+      <span>
+        1.95 $
+      </span>
+    </h1>
+    <div
+      className="actions"
+    >
+      <Link
+        className="button"
+        replace={false}
+        to="/create"
+      >
+        Добавить расход
+      </Link>
+    </div>
+  </div>
 </div>
 `;
 
 exports[`render ExpensesSummary for 3 expenses 1`] = `
-<div>
-  Viewing 
-  3
-   expense
-  s
-   totalling 
-  $1,141.95
+<div
+  className="page-header"
+>
+  <div
+    className="content-container"
+  >
+    <h1
+      className="title"
+    >
+      Показан
+      о
+      <span>
+         
+        3
+      </span>
+       
+      расхода
+      , общая сумма: 
+      <span>
+        1,141.95 $
+      </span>
+    </h1>
+    <div
+      className="actions"
+    >
+      <Link
+        className="button"
+        replace={false}
+        to="/create"
+      >
+        Добавить расход
+      </Link>
+    </div>
+  </div>
 </div>
 `;

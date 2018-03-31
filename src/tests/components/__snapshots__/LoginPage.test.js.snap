@@ -1,11 +1,26 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`render 1`] = `
-<div>
-  <button
-    onClick={[Function]}
+<div
+  className="box-layout"
+>
+  <div
+    className="box"
   >
-    Login
-  </button>
+    <h1
+      className="title"
+    >
+      Расходы
+    </h1>
+    <p>
+      Возьми свои расходы под контроль
+    </p>
+    <button
+      className="button"
+      onClick={[Function]}
+    >
+      Войти с помощью Google
+    </button>
+  </div>
 </div>
 `;

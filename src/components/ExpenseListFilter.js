@@ -3,7 +3,6 @@ import uuid from 'uuid';
 import { connect } from 'react-redux';
 import { DateRangePicker } from 'react-dates';
 import { setTextFilter, sortByAmount, sortByDate, setStartDate, setEndDate } from '../actions/filters';
-import 'react-dates/lib/css/_datepicker.css';
 
 export class ExpenseListFilter extends React.Component {
     state = {
@@ -39,31 +38,45 @@ export class ExpenseListFilter extends React.Component {
 
     render() {
         return (
-            <div>
-                <input
-                    type='text'
-                    value={this.props.filters.text}
-                    onChange={this.onTextChange}
-                />
-                <select
-                    value={this.props.filters.sortBy}
-                    onChange={this.onFilterChange}
-                >
-                    <option value='date'>Date</option>
-                    <option value='amount'>Amount</option>
-                </select>
-                <DateRangePicker
-                    startDate={this.props.filters.startDate}
-                    startDateId={uuid()}
-                    endDate={this.props.filters.endDate}
-                    endDateId={uuid()}
-                    onDatesChange={this.onDatesChange}
-                    focusedInput={this.state.calendarFocused}
-                    onFocusChange={this.onFocusChange}
-                    numberOfMonths={1}
-                    isOutsideRange={() => false}
-                    showClearDates={true}
-                />
+            <div className='content-container'>
+                <div className='horizontal-input-group'>
+                    <div className='input-group-item'>
+                        <input
+                            className='text-input'
+                            type='text'
+                            placeholder='Поиск'
+                            value={this.props.filters.text}
+                            onChange={this.onTextChange}
+                        />
+                    </div>
+                    <div className='input-group-item'>
+                        <select
+                            className='select'
+                            value={this.props.filters.sortBy}
+                            onChange={this.onFilterChange}
+                        >
+                            <option value='date'>Дата</option>
+                            <option value='amount'>Сумма</option>
+                        </select>
+                    </div>
+                    <div className='input-group-item'>
+                        <DateRangePicker
+                            startDatePlaceholderText='Начало'
+                            startDate={this.props.filters.startDate}
+                            startDateId={uuid()}
+                            endDatePlaceholderText='Конец'
+                            endDate={this.props.filters.endDate}
+                            endDateId={uuid()}
+                            onDatesChange={this.onDatesChange}
+                            focusedInput={this.state.calendarFocused}
+                            onFocusChange={this.onFocusChange}
+                            numberOfMonths={1}
+                            isOutsideRange={() => false}
+                            showClearDates={true}
+                            showDefaultInputIcon={true}
+                        />
+                    </div>
+                </div>
             </div>
         );
     }
